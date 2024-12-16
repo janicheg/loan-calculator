@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20241215234726 extends AbstractMigration
+final class Version20241216095850 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -24,8 +24,7 @@ final class Version20241215234726 extends AbstractMigration
         $this->addSql('CREATE TABLE client_product (uuid UUID NOT NULL, client_uuid UUID NOT NULL, parent_product_uuid UUID NOT NULL, rate DOUBLE PRECISION NOT NULL, create_time TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, is_applied BOOLEAN NOT NULL, PRIMARY KEY(uuid))');
         $this->addSql('CREATE INDEX IDX_817740D0E393C4 ON client_product (client_uuid)');
         $this->addSql('CREATE INDEX IDX_817740D0CF92F29 ON client_product (parent_product_uuid)');
-        $this->addSql('CREATE TABLE product (uuid UUID NOT NULL, name VARCHAR(255) NOT NULL, term VARCHAR(255) NOT NULL, amount INT NOT NULL, rate DOUBLE PRECISION NOT NULL, PRIMARY KEY(uuid))');
-        $this->addSql('COMMENT ON COLUMN product.term IS \'(DC2Type:dateinterval)\'');
+        $this->addSql('CREATE TABLE product (uuid UUID NOT NULL, name VARCHAR(255) NOT NULL, term INT NOT NULL, amount INT NOT NULL, rate DOUBLE PRECISION NOT NULL, PRIMARY KEY(uuid))');
         $this->addSql('ALTER TABLE client_product ADD CONSTRAINT FK_817740D0E393C4 FOREIGN KEY (client_uuid) REFERENCES client (uuid) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE client_product ADD CONSTRAINT FK_817740D0CF92F29 FOREIGN KEY (parent_product_uuid) REFERENCES product (uuid) NOT DEFERRABLE INITIALLY IMMEDIATE');
     }

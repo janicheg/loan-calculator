@@ -1,7 +1,7 @@
 ## Instruction to run service
 
 - Copy `git clone git@github.com:janicheg/loan-calculator.git`
-- Run `cp .env.dev .env`
+- Run `cd loan-calculator && cp .env.dev .env`
 - Run `docker compose up -d`
 - Add first product to table product (use some database manager)
 
