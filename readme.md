@@ -5,5 +5,5 @@
 - Run `docker compose up -d`
 - Add first product to table product (use some database manager)
 
-#### Now you can check API routes via `[postman_collection.json](https://github.com/janicheg/loan-calculator/blob/main/postman_collection.json)`
+#### Now you can check API routes via [postman_collection.json](https://github.com/janicheg/loan-calculator/blob/main/postman_collection.json)
 
