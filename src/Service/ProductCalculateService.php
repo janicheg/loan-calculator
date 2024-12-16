@@ -44,8 +44,10 @@ class ProductCalculateService
     {
         if (in_array($state, self::$availableStates)) {
             if ($state === self::NY && rand(0,1) === 0) {
-                throw new ProductNotAvailableForClient();
+                throw new ProductNotAvailableForClient('Bad state');
             }
+        } else {
+            throw new ProductNotAvailableForClient('Bad state');
         }
     }
     
